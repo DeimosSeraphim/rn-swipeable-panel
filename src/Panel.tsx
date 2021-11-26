@@ -189,7 +189,6 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
         useNativeDriver: false,
       }).start();
     } else {
-      console.log(newStatus);
       Animated.timing(this.state.opacity, {
         toValue: 1,
         duration: 300,
@@ -238,7 +237,6 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
           SwipeablePanelStyles.background,
           {
             backgroundColor: noBackgroundOpacity ? 'rgba(0,0,0,0)' : color,
-            // opacity: this.state.opacity,
             height: allowTouchOutside ? 'auto' : deviceHeight,
             width: deviceWidth,
           },
