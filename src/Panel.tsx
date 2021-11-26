@@ -71,7 +71,7 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
       isActive: false,
       showComponent: false,
       canScroll: false,
-      opacity: new Animated.Value(0),
+      opacity: new Animated.Value(1),
       pan: new Animated.ValueXY({ x: 0, y: FULL_HEIGHT }),
       orientation: FULL_HEIGHT >= FULL_WIDTH ? 'portrait' : 'landscape',
       deviceWidth: FULL_WIDTH,
@@ -182,6 +182,14 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
       status: newStatus,
     });
 
+    if (newStatus === 0) {
+      Animated.timing(this.state.opacity, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+    }
+
     Animated.spring(this.state.pan, {
       toValue: { x: 0, y: newY },
       tension: 80,
@@ -218,6 +226,7 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
           SwipeablePanelStyles.background,
           {
             backgroundColor: noBackgroundOpacity ? 'rgba(0,0,0,0)' : 'rgba(0,0,0,0.5)',
+            opacity: this.state.opacity,
             height: allowTouchOutside ? 'auto' : deviceHeight,
             width: deviceWidth,
           },
