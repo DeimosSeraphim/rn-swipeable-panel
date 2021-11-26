@@ -1,12 +1,12 @@
 {
   "name": "rn-swipeable-panel-with-fade-out",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Swipeable bottom panel for react native",
   "author": "Enes Ozturk",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/enesozturk/rn-swipeable-panel"
+    "url": "git+https://github.com/DeimosSeraphim/rn-swipeable-panel"
   },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -57,10 +57,7 @@
   },
   "homepage": "https://github.com/enesozturk/rn-swipeable-panel",
   "contributors": [
-    {
-      "name": "enesozturk",
-      "email": "enesozturk.d@gmail.com"
-    }
+    "enesozturk <enesozturk.d@gmail.com>"
   ],
   "peerDependencies": {
     "react": "^16.0.0",
