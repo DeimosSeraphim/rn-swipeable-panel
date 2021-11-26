@@ -186,7 +186,14 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
       Animated.timing(this.state.opacity, {
         toValue: 0,
         duration: 300,
-        useNativeDriver: true,
+        useNativeDriver: false,
+      }).start();
+    } else {
+      console.log(newStatus);
+      Animated.timing(this.state.opacity, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: false,
       }).start();
     }
 
@@ -220,13 +227,18 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
       closeOnTouchOutside,
     } = this.props;
 
+    var color = this.state.opacity.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.5)'],
+    });
+
     return showComponent ? (
       <Animated.View
         style={[
           SwipeablePanelStyles.background,
           {
-            backgroundColor: noBackgroundOpacity ? 'rgba(0,0,0,0)' : 'rgba(0,0,0,0.5)',
-            opacity: this.state.opacity,
+            backgroundColor: noBackgroundOpacity ? 'rgba(0,0,0,0)' : color,
+            // opacity: this.state.opacity,
             height: allowTouchOutside ? 'auto' : deviceHeight,
             width: deviceWidth,
           },
