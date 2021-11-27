@@ -21,7 +21,7 @@
 To install the package;
 
 ```
-$ yarn add rn-swipeable-panel
+$ yarn add rn-swipeable-panel-with-fade-out
 ```
 
 ✅ It is done!
@@ -34,7 +34,7 @@ $ yarn add rn-swipeable-panel
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { SwipeablePanel } from 'rn-swipeable-panel';
+import { SwipeablePanel } from 'rn-swipeable-panel-with-fade-out';
 
 export default App = () => {
   const [panelProps, setPanelProps] = useState({
