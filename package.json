@@ -1,6 +1,6 @@
 {
   "name": "rn-swipeable-panel-with-fade-out",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "Swipeable bottom panel for react native with FadeIn/FadeOut bg animation",
   "author": "Enes Ozturk",
   "license": "MIT",
