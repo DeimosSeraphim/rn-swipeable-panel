@@ -8,13 +8,13 @@ import {
   Animated,
   Dimensions,
   PanResponder,
-  ScrollViewProps,
-} from 'react-native';
+  ScrollViewProps, Platform,
+} from 'react-native'
 
 import { Bar } from './Bar';
 import { Close } from './Close';
 
-let FULL_HEIGHT = Dimensions.get('window').height;
+let FULL_HEIGHT = Platform.OS === 'android' ? 3000 : Dimensions.get('window').height;
 let FULL_WIDTH = Dimensions.get('window').width;
 let PANEL_HEIGHT = FULL_HEIGHT - 100;
 
