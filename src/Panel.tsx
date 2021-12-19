@@ -14,7 +14,7 @@ import {
 import { Bar } from './Bar';
 import { Close } from './Close';
 
-let FULL_HEIGHT = Platform.OS === 'android' ? 3000 : Dimensions.get('window').height;
+let FULL_HEIGHT = Platform.OS === 'android' ? Dimensions.get('window').height + 300 : Dimensions.get('window').height;
 let FULL_WIDTH = Dimensions.get('window').width;
 let PANEL_HEIGHT = FULL_HEIGHT - 100;
 
