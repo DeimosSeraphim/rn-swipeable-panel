@@ -155,12 +155,18 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
         'Ops. You are using both onlyLarge and onlySmall options. onlySmall will override the onlyLarge in this situation. Please select one of them or none.',
       );
 
+    const lHandler = (value: any) => {
+      this.animatedValueY = value.value;
+    };
+
     if (prevProps.isActive !== isActive) {
       this.setState({ isActive });
 
       if (isActive) {
+        this.state.pan.y.addListener(lHandler);
         this._animateTo(onlySmall ? STATUS.SMALL : openLarge ? STATUS.LARGE : onlyLarge ? STATUS.LARGE : STATUS.SMALL);
       } else {
+        this.state.pan.y.removeListener(lHandler);
         this._animateTo();
       }
     }
