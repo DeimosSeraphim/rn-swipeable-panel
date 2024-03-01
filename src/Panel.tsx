@@ -8,13 +8,13 @@ import {
   Animated,
   Dimensions,
   PanResponder,
-  ScrollViewProps, Platform,
-} from 'react-native'
+  ScrollViewProps,
+} from 'react-native';
 
 import { Bar } from './Bar';
 import { Close } from './Close';
 
-let FULL_HEIGHT = Platform.OS === 'android' ? Dimensions.get('window').height + 300 : Dimensions.get('window').height;
+let FULL_HEIGHT = Dimensions.get('window').height;
 let FULL_WIDTH = Dimensions.get('window').width;
 let PANEL_HEIGHT = FULL_HEIGHT - 100;
 
@@ -215,7 +215,7 @@ class SwipeablePanel extends Component<SwipeablePanelProps, SwipeablePanelState>
         this.setState({
           showComponent: false,
         });
-      } else this.setState({ canScroll: newStatus === STATUS.LARGE ? true : false });
+      } else this.setState({ canScroll: newStatus === STATUS.LARGE });
     });
   };
 
